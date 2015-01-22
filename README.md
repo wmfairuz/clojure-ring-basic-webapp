@@ -4,7 +4,9 @@ A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
 
-FIXME
+=> (use 'ring.adapter.jetty)
+=> (use 'clojure-ring-basic-webapp.core.core)
+=> (run-jetty handler {:port 3000})
 
 ## License
 

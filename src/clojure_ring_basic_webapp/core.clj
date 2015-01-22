@@ -1,4 +1,5 @@
-(ns clojure-ring-basic-webapp.core)
+(ns clojure-ring-basic-webapp.core
+  (:require [ring.middleware.params :refer [wrap-params]]))
 
 (defn handler [request]
   {:status 200
@@ -15,6 +16,14 @@
     (let [response (handler request)]
       (assoc-in response [:headers "foo"] "bar"))))
 
+(defn wrap-print-request [handler]
+  (fn [request]
+    (println "Incoming request -----> ")
+    (println request)
+    (handler request)))
+
 (def app
   (-> handler
+      wrap-print-request
+      wrap-params
       add-custom-header))

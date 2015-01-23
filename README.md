@@ -6,7 +6,7 @@ A Clojure library designed to ... well, that part is up to you.
 
 => (use 'ring.adapter.jetty)
 
-=> (use 'clojure-ring-basic-webapp.core.core)
+=> (use 'clojure-ring-basic-webapp.core)
 
 => (run-jetty handler {:port 3000})
 
